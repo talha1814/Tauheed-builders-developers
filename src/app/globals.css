@@ -1,26 +1,97 @@
 @import "tailwindcss";
 
+@theme {
+  --color-charcoal: #171A1D;
+  --color-charcoal-light: #22262B;
+  --color-charcoal-dark: #0E1012;
+  --color-ivory: #F7F6F2;
+  --color-ivory-dark: #ECEAE4;
+  --color-gold: #B89A68;
+  --color-gold-light: #D4BD8F;
+  --color-gold-dark: #997D4D;
+  --color-soft-grey: #E8E7E2;
+  --color-primary-text: #202124;
+  --color-secondary-text: #73777C;
+  --font-serif: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-sans: var(--font-inter), Inter, system-ui, -apple-system, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --charcoal: #171A1D;
+  --charcoal-light: #22262B;
+  --charcoal-dark: #0E1012;
+  --ivory: #F7F6F2;
+  --gold: #B89A68;
+  --gold-light: #D4BD8F;
+  --gold-dark: #997D4D;
+  --soft-grey: #E8E7E2;
+  --primary-text: #202124;
+  --secondary-text: #73777C;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--ivory);
+  color: var(--primary-text);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f0eb;
+}
+::-webkit-scrollbar-thumb {
+  background: #B89A68;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #997D4D;
+}
+
+/* Luxury Architectural Typography & Utilities */
+.font-editorial {
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #D4BD8F 0%, #B89A68 50%, #8A6E3B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border {
+  border-color: #B89A68;
+}
+
+.gold-border-subtle {
+  border-color: rgba(184, 154, 104, 0.25);
+}
+
+.bg-charcoal {
+  background-color: #171A1D;
+}
+
+.bg-ivory {
+  background-color: #F7F6F2;
+}
+
+.text-gold {
+  color: #B89A68;
+}
+
+.bg-gold {
+  background-color: #B89A68;
+}
+
+.border-gold {
+  border-color: #B89A68;
 }
